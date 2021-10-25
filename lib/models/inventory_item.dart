@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 
 class InventoryItem with ChangeNotifier {
-  String medName, medId, pharmaName;
+  String medName, medId, pharmaName, image;
   int quantityAvailable, price;
   bool isInCart;
 
@@ -11,6 +11,7 @@ class InventoryItem with ChangeNotifier {
     @required this.pharmaName,
     @required this.price,
     @required this.quantityAvailable,
+    @required this.image,
     this.isInCart = false,
   });
 
@@ -21,6 +22,7 @@ class InventoryItem with ChangeNotifier {
       pharmaName: jsonData['pharmaName'],
       price: jsonData['price'],
       quantityAvailable: jsonData['quantityAvailable'],
+      image: jsonData['image'],
     );
   }
 

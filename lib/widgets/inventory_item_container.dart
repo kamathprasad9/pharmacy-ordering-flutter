@@ -30,6 +30,11 @@ class InventoryItemContainer extends StatelessWidget {
                   // Image(
                   //   image: NetworkImage(item.productImage),
                   // ),
+                  Container(
+                    padding: const EdgeInsets.all(5),
+                    height: 100,
+                    child: Image.network(inventoryItem.image),
+                  ),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
