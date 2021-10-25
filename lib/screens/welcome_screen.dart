@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 //widgets
 import '../widgets/custom_button.dart';
+
 //screens
 import 'login_screen.dart';
 import 'registration_screen.dart';
@@ -21,38 +22,49 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
     return Scaffold(
       body: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 24.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: <Widget>[
-              Row(
-                children: const <Widget>[
-                  // Hero(
-                  //   tag: 'logo',
-                  //   child: Container(
-                  //     child: Image.asset('images/logo.png'),
-                  //     height: 60.0,
-                  //   ),
-                  // ),
-                  Text('Hello')
-                ],
+          child: Container(
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("assets/background.jpeg"),
+                fit: BoxFit.cover,
               ),
-              const SizedBox(
-                height: 48.0,
-              ),
-              CustomButton(
-                title: 'Log In',
-                onPressed: () {
-                  Navigator.pushNamed(context, LoginScreen.routeName);
-                },
-              ),
-              CustomButton(
-                title: 'Register',
-                onPressed: () {
-                  Navigator.pushNamed(context, RegistrationScreen.routeName);
-                },
-              ),
-            ],
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: <Widget>[
+                Row(
+                  children: const <Widget>[
+                    // Hero(
+                    //   tag: 'logo',
+                    //   child: Container(
+                    //     child: Image.asset('images/logo.png'),
+                    //     height: 60.0,
+                    //   ),
+                    // ),
+                    Text(
+                      'Pharmacy Ordering App',
+                      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
+                    )
+                  ],
+                ),
+                const SizedBox(
+                  height: 48.0,
+                ),
+                CustomButton(
+                  title: 'Log In',
+                  onPressed: () {
+                    Navigator.pushNamed(context, LoginScreen.routeName);
+                  },
+                ),
+                CustomButton(
+                  title: 'Register',
+                  onPressed: () {
+                    Navigator.pushNamed(context, RegistrationScreen.routeName);
+                  },
+                ),
+              ],
+            ),
           )),
     );
   }
